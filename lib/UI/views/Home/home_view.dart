@@ -37,7 +37,6 @@ class HomeView extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
 class _HomeBody extends StatelessWidget {
   final HomeViewModel vm;
   const _HomeBody({required this.vm});
@@ -47,7 +46,6 @@ class _HomeBody extends StatelessWidget {
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
-        // ── Hero SliverAppBar ──────────────────────────────────
         SliverAppBar(
           expandedHeight: 320,
           pinned: true,
@@ -72,23 +70,18 @@ class _HomeBody extends StatelessWidget {
               children: [
                 const SizedBox(height: 12),
 
-                // Stats Row
                 _StatsRow(vm: vm),
                 const SizedBox(height: 24),
 
-                // Info
                 InfoCardWidget(vm: vm),
                 const SizedBox(height: 24),
 
-                // BioCard
                 BioCardWidget(vm: vm),
                 const SizedBox(height: 24),
 
-                // Skil
                 SkillsGridWidget(vm: vm),
                 const SizedBox(height: 24),
 
-                // Language Row
                 _LanguagePickerSection(vm: vm),
                 const SizedBox(height: 40),
               ],
@@ -100,7 +93,6 @@ class _HomeBody extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
 class _HeroHeader extends StatelessWidget {
   final HomeViewModel vm;
   const _HeroHeader({required this.vm});
@@ -115,7 +107,6 @@ class _HeroHeader extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          // Background decorations
           Positioned(
             top: -40,
             right: -40,
@@ -133,7 +124,6 @@ class _HeroHeader extends StatelessWidget {
             ),
           ),
 
-          // Content
           Padding(
             padding: const EdgeInsets.fromLTRB(24, 80, 24, 24),
             child: Row(
@@ -171,7 +161,7 @@ class _HeroHeader extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
 
-                      // Name
+                  
                       Text(
                         loc.name,
                         style: const TextStyle(
@@ -184,7 +174,6 @@ class _HeroHeader extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
 
-                      // Role
                       ShaderMask(
                         shaderCallback: (bounds) =>
                             const LinearGradient(
@@ -214,7 +203,6 @@ class _HeroHeader extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
 class _StatsRow extends StatelessWidget {
   final HomeViewModel vm;
   const _StatsRow({required this.vm});
@@ -252,7 +240,6 @@ class _StatsRow extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
 class _LanguagePickerSection extends StatelessWidget {
   final HomeViewModel vm;
   const _LanguagePickerSection({required this.vm});
@@ -330,7 +317,6 @@ class _LanguagePickerSection extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
 class _GlowCircle extends StatelessWidget {
   final double size;
   final Color color;
@@ -349,9 +335,6 @@ class _GlowCircle extends StatelessWidget {
   }
 }
 
-// Helper to get localizations that respect the current locale override
-// We use the Localizations.override + Builder pattern, but since we set
-// Directionality + Localizations.override at root, we access via Builder.
 _AppLoc _locOf(BuildContext context, HomeViewModel vm) {
   return _AppLoc(vm);
 }

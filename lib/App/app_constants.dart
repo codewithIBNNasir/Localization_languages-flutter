@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Primary Palette — Deep Tech Blue + Neon Accent
+ 
   static const Color primary = Color(0xFF0A0E27);
   static const Color secondary = Color(0xFF1A1F3C);
   static const Color accent = Color(0xFF00D4FF);

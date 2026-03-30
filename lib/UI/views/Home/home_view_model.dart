@@ -4,7 +4,6 @@ import 'package:stacked/stacked.dart';
 import '../../../app/app_constants.dart';
 
 class HomeViewModel extends BaseViewModel {
-  // ── Language State ──────────────────────────────────────────────
   Locale _currentLocale = const Locale('en');
   int _currentLanguageIndex = 0;
 
@@ -16,15 +15,12 @@ class HomeViewModel extends BaseViewModel {
 
   bool get isRtl => _currentLocale.languageCode == 'ur';
 
-  // ── Avatar Animation State ────────────────────────────────────
   bool _isAvatarHovered = false;
   bool get isAvatarHovered => _isAvatarHovered;
 
-  // ── Skills Expanded ───────────────────────────────────────────
   bool _skillsVisible = false;
   bool get skillsVisible => _skillsVisible;
 
-  // ─────────────────────────────────────────────────────────────
   void init() {
     Future.delayed(const Duration(milliseconds: 600), () {
       _skillsVisible = true;
@@ -32,7 +28,6 @@ class HomeViewModel extends BaseViewModel {
     });
   }
 
-  // ── Language Cycling ─────────────────────────────────────────
   void cycleLanguage() {
     _currentLanguageIndex =
         (_currentLanguageIndex + 1) % AppStrings.languages.length;
@@ -49,8 +44,7 @@ class HomeViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  // ── Avatar Hover ─────────────────────────────────────────────
-  void setAvatarHovered(bool value) {
+ void setAvatarHovered(bool value) {
     _isAvatarHovered = value;
     notifyListeners();
   }
